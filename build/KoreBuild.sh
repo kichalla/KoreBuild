@@ -135,7 +135,7 @@ export ReferenceAssemblyRoot=$NUGET_PACKAGES/netframeworkreferenceassemblies/$ne
 makeFileProj="$scriptRoot/KoreBuild.proj"
 msbuildArtifactsDir="$repoFolder/artifacts/msbuild"
 msbuildResponseFile="$msbuildArtifactsDir/msbuild.rsp"
-msbuildLogFile="$msbuildArtifactsDir/msbuild.binlog"
+msbuildLogFile="$msbuildArtifactsDir/msbuild.log"
 
 if [ ! -f $msbuildArtifactsDir ]; then
     mkdir -p $msbuildArtifactsDir
@@ -145,7 +145,8 @@ cat > $msbuildResponseFile <<ENDMSBUILDARGS
 /nologo
 /m
 /p:RepositoryRoot="$repoFolder/"
-/bl:"$msbuildLogFile"
+/fl
+/flp:LogFile="$msbuildLogFile";Verbosity=detailed;Encoding=UTF-8
 /clp:Summary
 "$makeFileProj"
 ENDMSBUILDARGS

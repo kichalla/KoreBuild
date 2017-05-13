@@ -100,7 +100,7 @@ if (!($env:Path.Split(';') -icontains $dotnetLocalInstallFolder))
 
 $makeFileProj = "$PSScriptRoot/KoreBuild.proj"
 $msbuildArtifactsDir = "$repoFolder/artifacts/msbuild"
-$msbuildLogFilePath = "$msbuildArtifactsDir/msbuild.binlog"
+$msbuildLogFilePath = "$msbuildArtifactsDir/msbuild.log"
 $msBuildResponseFile = "$msbuildArtifactsDir/msbuild.rsp"
 
 
@@ -108,7 +108,8 @@ $msBuildArguments = @"
 /nologo
 /m
 /p:RepositoryRoot="$repoFolder/"
-/bl:"$msbuildLogFilePath"
+/fl
+/flp:LogFile="$msbuildLogFilePath";Verbosity=detailed;Encoding=UTF-8
 /clp:Summary
 "$makeFileProj"
 "@
