@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <AspNetCoreVersion>2.0.0-preview2-25350</AspNetCoreVersion>
+    <AspNetCoreVersion>2.0.0-preview2-25460</AspNetCoreVersion>
     <Microsoft.ApplicationInsights>2.4.0-beta4</Microsoft.ApplicationInsights>
     <Microsoft.ApplicationInsights.AspNetCore>2.1.0-beta5</Microsoft.ApplicationInsights.AspNetCore>
     <Microsoft.ApplicationInsights.DependencyCollector>2.4.0-beta4</Microsoft.ApplicationInsights.DependencyCollector>
